@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Login</title>
+</head>
+<body>
+  <!-- Aba de navegação -->
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li id="toggle"><i class="fa-solid fa-sun"></i></li>
+                <li id="increaseFont"><i class="fa-solid fa-plus"></i></li>
+                <li id="decreaseFont"><i class="fa-solid fa-minus"></i></li>
+                <li class="active-nav-list-li">Login</li>
+                <li><a href="cadastro.html">Cadastre-se</a></li>
+            </ul>
+            <div class="container-right-button">
+                <a class="right-button" href="sobre_nos.html">sobre nós</a>
+            </div>
+        </nav>
+        <div class="Linha"></div>
+    </header>
+<!-- Conteúdo login -->
+    <main>
+    <div class="conteudo-login">
+        <div class="left-section" id="left-section">
+          <div class="login-container">
+                <div class="texto">
+                    <h1>Coffee</h1>
+                    <h3>RH</h3>
+                    <p>Faça seu Login</p>
+                </div>
+                <form id="form">
+                    <div class="form-control">
+                        <label for="indexLogin">Login:</label>
+                        <input
+                          type="text"
+                          id="indexLogin"
+                          placeholder="Digite seu Login."
+                          maxlength="6"
+                          oninput="this.value = this.value.toLowerCase();" 
+                        />
+                        <i class="fas fa-exclamation-circle" style="margin-top: 5px;"></i>
+                        <i class="fas fa-check-circle" style="margin-top: 5px;"></i>
+                        <small>Mensagem de erro</small>
+                      </div>
+                      
+                      <div class="form-control">
+                        <label for="indexPassword">Senha:</label>
+                        <input
+                        type="password"
+                        id="indexPassword"
+                        placeholder="Digite sua senha."
+                        maxlength="8"
+                        oninput="this.value = this.value.toLowerCase();" 
+                        />
+                        <i class="fas fa-exclamation-circle" style="margin-top: 5px;"></i>
+                        <i class="fas fa-check-circle" style="margin-top: 5px;"></i>
+                        <small>Mensagem de erro</small>
+                      </div>
+                    <button type="button" onclick="matchInputs()" style="transform: translate(195px,5px); padding: 10px 18px;">Entrar</button>
+                </form>
+            </div>
+        </div>
+        <div class="right-section"></div>
+    </div>
+    </main>
+    <footer>
+        <div style="text-align: center;margin: 20px;">
+            <h2>Direitos Reservados - Grupo 04</h2>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;margin-top: 20px;">
+                <strong>kaynan <br>lucas </strong> 
+                <strong>Pedro <br>Moises </strong> 
+                <strong>Gabriel <br>Nogueira </strong> 
+                <strong>João <br>Vitor </strong> 
+                <strong>Mateus  <br>Rodrigues </strong> 
+                <strong>Yasmim <br> de Almeida </strong> 
+                <strong>Júlia <br>Rodrigues </strong> 
+                <strong>Kamyle <br>Ferreira </strong> 
+            </div>
+        </div>
+    </footer>
+      <script src="Javascript/scripts.js"></script>
+</body>
+</html>

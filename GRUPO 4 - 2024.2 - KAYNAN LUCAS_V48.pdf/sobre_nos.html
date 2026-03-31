@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Sobre nós</title>
+</head>
+<body>
+  <!-- Aba de navegação -->
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li id="toggle"><i class="fa-solid fa-sun"></i></li>
+                <li id="increaseFont"><i class="fa-solid fa-plus"></i></li>
+                <li id="decreaseFont"><i class="fa-solid fa-minus"></i></li>
+                <li><a href="index.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastre-se</a></li>
+            </ul>
+            <div class="container-right-button">
+                <span class="active-right-button">sobre nós</span>
+            </div>      
+        </nav>
+        <div class="Linha"></div>
+    </header>
+    <!-- Conteúdo sobre nós -->
+    <main style="margin-bottom: 220px;" id="mainSobreNos">
+      <h1 style="margin-bottom: 80px;">Sobre nós</h1>
+
+      <section class="intro">
+        <h2>Nossa Missão</h2>
+        <p>Conectar talentos às melhores oportunidades, promovendo um ambiente de trabalho saudável e produtivo.</p>
+    </section>
+    <section class="history">
+        <h2>Nossa História</h2>
+        <p>Em outubro, iniciamos nosso projeto com uma visão compartilhada: construir um site que facilite a forma como as pessoas registram suas horas de trabalho. Cada um de nós trouxe habilidades, ideias e dedicação únicas para esse projeto. Somamos esforços para entregar o melhor trabalho diante das circunstâncias e do período exigido."</p>
+    </section>
+
+    </main>
+    <footer>
+        <div style="text-align: center;margin: 20px;">
+            <h2>Direitos Reservados - Grupo 04</h2>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;margin-top: 20px;">
+                <strong>kaynan <br>lucas </strong> 
+                <strong>Pedro <br>Moises </strong> 
+                <strong>Gabriel <br>Nogueira </strong> 
+                <strong>João <br>Vitor </strong> 
+                <strong>Mateus  <br>Rodrigues </strong> 
+                <strong>Yasmim <br> de Almeida </strong> 
+                <strong>Júlia <br>Rodrigues </strong> 
+                <strong>Kamyle <br>Ferreira </strong> 
+            </div>
+        </div>
+    </footer>
+    <script>
+
+        conteudo = document.querySelector("#toggle")
+        
+        conteudo.addEventListener("click", () => {
+        mudarIcone()
+        darkMode()
+        });
+        
+        function mudarIcone() {
+            if (conteudo.innerHTML === '<i class="fa-solid fa-moon"></i>'){
+            conteudo.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } 
+            else{
+            conteudo.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        }
+        
+        function darkMode(){
+            document.body.classList.toggle('dark-mode')
+        }
+
+        const root = document.documentElement; 
+        const increaseFontButton = document.getElementById('increaseFont');
+        const decreaseFontButton = document.getElementById('decreaseFont');
+
+        function adjustFontSize(change) {
+
+        const currentSize = parseFloat(getComputedStyle(root).fontSize);
+
+        const newSize = currentSize + change;
+
+        root.style.fontSize = `${newSize}px`;
+        }
+
+        increaseFontButton.addEventListener('click', () => adjustFontSize(1)); 
+        decreaseFontButton.addEventListener('click', () => adjustFontSize(-1)); 
+    </script>
+</body>
+</html>

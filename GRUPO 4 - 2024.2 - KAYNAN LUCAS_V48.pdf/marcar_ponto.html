@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Marcar Ponto</title>
+</head>
+<body>
+  <!-- Aba de navegação -->
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li id="toggle"><i class="fa-solid fa-sun"></i></li>
+                <li id="increaseFont"><i class="fa-solid fa-plus"></i></li>
+                <li id="decreaseFont"><i class="fa-solid fa-minus"></i></li>
+                <li><a class="right-button" href="servicos.html">Voltar</a></li>
+            </ul>
+            <p><strong>Bem vindo,</strong> <span id="name">nome</span>!</p>
+            <div class="container-right-button">
+                <a class="right-button" href="index.html">Mudar de usuário</a>
+            </div>
+        </nav>
+        <div class="Linha"></div>
+    </header>
+    <!-- Conteúdo marcar ponto -->
+    <main>
+      <h1>Marcar Ponto</h1>
+
+      <div class="container-principal">
+        <div class="container-botton-table">
+            <h1 style="padding: 30px 10px;">Registro de Ponto Virtual</h1>
+            <div class="container-botton">
+                <button onclick="registrarHora()">Registrar Ponto</button>
+            </div>
+            <div class="container-table">
+                <table>
+                    <thead >
+                        <tr>
+                            <th style="padding: 10px 40px;">Nome</th>
+                            <th style="padding: 10px 55px;">Data</th>
+                            <th style="padding: 10px 45px;">Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody id="registroPontos" style="transform: translate(40px);">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+      </div>
+    </main> 
+    <footer style="transform: translateY(350px);">
+        <div style="text-align: center;margin: 20px;">
+            <h2>Direitos Reservados - Grupo 04</h2>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;margin-top: 20px;">
+                <strong>kaynan <br>lucas </strong> 
+                <strong>Pedro <br>Moises </strong> 
+                <strong>Gabriel <br>Nogueira </strong> 
+                <strong>João <br>Vitor </strong> 
+                <strong>Mateus  <br>Rodrigues </strong> 
+                <strong>Yasmim <br> de Almeida </strong> 
+                <strong>Júlia <br>Rodrigues </strong> 
+                <strong>Kamyle <br>Ferreira </strong> 
+            </div>
+        </div>
+    </footer>
+    <script>
+        let contador = 1;
+    
+        function registrarHora() {
+            const tabela = document.getElementById('registroPontos');
+            const novaLinha = tabela.insertRow();
+            const colunaID = novaLinha.insertCell(0);
+            const colunaData = novaLinha.insertCell(1);
+            const colunaHora = novaLinha.insertCell(2);
+    
+            const agora = new Date();
+            const dataAtual = agora.toLocaleDateString('pt-BR');
+            const horaAtual = agora.toLocaleTimeString('pt-BR');
+    
+            colunaID.textContent = localStorage.getItem("login");
+            colunaData.textContent = dataAtual;
+            colunaHora.textContent = horaAtual;
+        }
+
+        document.getElementById("name").textContent = localStorage.getItem("login")
+
+        conteudo = document.querySelector("#toggle")
+        
+        conteudo.addEventListener("click", () => {
+        mudarIcone()
+        darkMode()
+        });
+        
+        function mudarIcone() {
+            if (conteudo.innerHTML === '<i class="fa-solid fa-moon"></i>'){
+            conteudo.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } 
+            else{
+            conteudo.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        }
+        
+        function darkMode(){
+            document.body.classList.toggle('dark-mode')
+        }
+
+        const root = document.documentElement; 
+        const increaseFontButton = document.getElementById('increaseFont');
+        const decreaseFontButton = document.getElementById('decreaseFont');
+
+        function adjustFontSize(change) {
+
+        const currentSize = parseFloat(getComputedStyle(root).fontSize);
+
+        const newSize = currentSize + change;
+
+        root.style.fontSize = `${newSize}px`;
+        }
+
+        increaseFontButton.addEventListener('click', () => adjustFontSize(1)); 
+        decreaseFontButton.addEventListener('click', () => adjustFontSize(-1)); 
+    </script>
+</body>
+</html>

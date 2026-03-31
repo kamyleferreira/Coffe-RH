@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Serviços</title>
+</head>
+<body>
+  <!-- Aba de navegação -->
+    <header>
+        <nav>
+            <ul class="nav-list">
+              <li id="toggle"><i class="fa-solid fa-sun"></i></li>
+              <li id="increaseFont"><i class="fa-solid fa-plus"></i></li>
+              <li id="decreaseFont"><i class="fa-solid fa-minus"></i></li>
+                <li class="active-nav-list-li">Serviços</li>
+            </ul>
+            <p><Strong>Bem vindo, </Strong><span id="name">nome</span>!</p>
+            <div class="container-right-button">
+                <a class="right-button" href="index.html">Mudar de usuário</a>
+            </div>
+        </nav>
+        <div class="Linha"></div>
+    </header>
+    <!-- Conteúdo serviços -->
+    <main style="margin-bottom: 400px;">
+      <h1 id="h1-serviços"> Serviços:</h1>
+      <div class="buttons-container">
+        <a href="perfil.html"><button class="button button1">Perfil</button></a>
+        <a href="marcar_ponto.html"><button class="button button2">Marque <br>seu Ponto</button></a>
+
+      </div>
+    </main>
+    <footer>
+      <div style="text-align: center;margin: 20px;">
+          <h2>Direitos Reservados - Grupo 04</h2>
+          <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;margin-top: 20px;">
+              <strong>kaynan <br>lucas </strong> 
+              <strong>Pedro <br>Moises </strong> 
+              <strong>Gabriel <br>Nogueira </strong> 
+              <strong>João <br>Vitor </strong> 
+              <strong>Mateus  <br>Rodrigues </strong> 
+              <strong>Yasmim <br> de Almeida </strong> 
+              <strong>Júlia <br>Rodrigues </strong> 
+              <strong>Kamyle <br>Ferreira </strong> 
+          </div>
+      </div>
+  </footer>
+     <script>
+      document.getElementById("name").textContent = localStorage.getItem("login")
+      conteudo = document.querySelector("#toggle")
+      
+      conteudo.addEventListener("click", () => {
+      mudarIcone()
+      darkMode()
+      });
+      
+      function mudarIcone() {
+          if (conteudo.innerHTML === '<i class="fa-solid fa-moon"></i>'){
+          conteudo.innerHTML = '<i class="fa-solid fa-sun"></i>';
+          } 
+          else{
+          conteudo.innerHTML = '<i class="fa-solid fa-moon"></i>';
+          }
+      }
+      
+      function darkMode(){
+          document.body.classList.toggle('dark-mode')
+      }
+
+      const root = document.documentElement; 
+      const increaseFontButton = document.getElementById('increaseFont');
+      const decreaseFontButton = document.getElementById('decreaseFont');
+
+      function adjustFontSize(change) {
+
+        const currentSize = parseFloat(getComputedStyle(root).fontSize);
+
+        const newSize = currentSize + change;
+
+        root.style.fontSize = `${newSize}px`;
+      }
+
+      increaseFontButton.addEventListener('click', () => adjustFontSize(1)); 
+      decreaseFontButton.addEventListener('click', () => adjustFontSize(-1)); 
+      </script>
+</body>
+</html>

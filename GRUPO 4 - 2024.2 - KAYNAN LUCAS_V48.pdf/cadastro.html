@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Cadastrar novo usuário</title>
+  </head>
+</head>
+<body>
+    <!-- Aba de navegação -->
+    <header>
+        <nav>
+          <ul class="nav-list">
+            <li id="toggle"><i class="fa-solid fa-sun"></i></li>
+            <li id="increaseFont"><i class="fa-solid fa-plus"></i></li>
+            <li id="decreaseFont"><i class="fa-solid fa-minus"></i></li>
+            <li><a href="index.html">Login</a></li>
+            <li class="active-nav-list-li">Cadastre-se</li>
+        </ul>
+        <div class="container-right-button">
+            <a class="right-button" href="sobre_nos.html">sobre nós</a>
+        </div>
+        </nav>
+        <div class="Linha"></div>
+    </header>
+    <!-- conteúdo -->
+    <main id="main-cadastro">
+        <div class="container">
+          <div class="header">
+            <h2>Criar Uma Conta</h2>
+          </div>
+    
+          <form id="form" class="form">
+
+            <div class="form-control">
+                <label for="username">Nome*</label>
+                <input
+                type="text"
+                id="username"
+                placeholder="Digite seu nome."
+                maxlength="45"
+                oninput="this.value = this.value.trimStart()" 
+                />
+                <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+
+            <div class="form-control">
+              <label for="birth">Data de nascimento</label>
+              <input
+                type="date"
+                id="birth"
+              />
+              <small>Mensagem de erro</small>
+            </div>
+    
+    
+            <div class="form-control">
+              <label for="CPF">CPF*</label>
+              <input
+                type="text"
+                id="CPF"
+                placeholder="Digite seu CPF."
+                maxlength="11"
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+    
+            
+            <div class="form-control">
+              <label for="password-confirmation">telefone*</label>
+              <input
+              type="text"
+              id="telefone"
+              placeholder="Digite seu telefone."
+              maxlength="18"
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+            
+            <div class="form-control">
+              <label for="email">Email*</label>
+              <input 
+              type="text" 
+              id="email" 
+              placeholder="Digite seu email." 
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+            
+            <div class="form-control">
+              <label for="login">Login*</label>
+              <input
+                type="text"
+                id="login"
+                placeholder="Digite seu Login."
+                maxlength="6"
+                oninput="this.value = this.value.toLowerCase();" 
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+            
+            <div class="form-control">
+              <label for="password">Senha*</label>
+              <input
+              type="password"
+              id="password"
+              placeholder="Digite sua senha..."
+              maxlength="8"
+              oninput="this.value = this.value.toLowerCase();" 
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+            
+            <div class="form-control">
+              <label for="password-confirmation">Confirmação de senha*</label>
+              <input
+              type="password"
+              id="password-confirmation"
+                placeholder="Digite sua senha novamente..."
+                maxlength="8"
+                oninput="this.value = this.value.toLowerCase();" 
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+            <button type="button" onclick="checkInputs()">Cadastrar</button>
+          </form>
+        </div>
+        </main>
+        <footer>
+          <div style="text-align: center;margin: 20px;">
+              <h2>Direitos Reservados - Grupo 04</h2>
+              <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;margin-top: 20px;">
+                  <strong>kaynan <br>lucas </strong> 
+                  <strong>Pedro <br>Moises </strong> 
+                  <strong>Gabriel <br>Nogueira </strong> 
+                  <strong>João <br>Vitor </strong> 
+                  <strong>Mateus  <br>Rodrigues </strong> 
+                  <strong>Yasmim <br> de Almeida </strong> 
+                  <strong>Júlia <br>Rodrigues </strong> 
+                  <strong>Kamyle <br>Ferreira </strong> 
+              </div>
+          </div>
+        </footer>
+      <script src="Javascript/scripts.js"></script>
+</body>
+</html>
